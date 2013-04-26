@@ -1,0 +1,17 @@
+message:
+    general:
+        backToOverview: Zurück zur Übersicht
+        sender: Absender
+        subject: Betreff
+        date: Datum
+        receiver: Empfänger
+        content: Inhalt
+    list:
+        send: Nachricht senden
+        markRead: als gelesen markieren
+        markUnread: als ungelesen markieren
+    send:
+        send: absenden
+    show:
+    flash:
+        sent: Die Nachricht wurde erfolgreich verschickt

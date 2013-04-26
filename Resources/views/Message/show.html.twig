@@ -1,0 +1,9 @@
+{% extends 'CunningsoftMessageBundle::layout.html.twig' %}
+
+{% block cunningsoft_message_content %}
+<a href="{{ path('cunningsoft_message_list') }}">{{ 'message.general.backToOverview'|trans({}, 'CunningsoftMessageBundle') }}</a>
+<div class="cunningsoft_message_sender">{{ 'message.general.sender'|trans({}, 'CunningsoftMessageBundle') }}: {{ message.sender.username }}</div>
+<div class="cunningsoft_message_subject">{{ 'message.general.subject'|trans({}, 'CunningsoftMessageBundle') }}: {{ message.subject }}</div>
+<div class="cunningsoft_message_date">{{ 'message.general.date'|trans({}, 'CunningsoftMessageBundle') }}: <span title="{{ message.insertDate.format('d.m.Y H:i:s') }}">{{ message.insertDate|ago }}</span></div>
+<div class="cunningsoft_message_content">{{ message.content }}</div>
+{% endblock %}

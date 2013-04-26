@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+        <div>
+            {% block cunningsoft_message_content %}
+            {% endblock %}
+        </div>
+{% for key, message in app.session.getFlashes() %}
+        <div class="{{ key }}">
+            {{ message|trans({}, 'CunningsoftMessageBundle') }}
+        </div>
+{% endfor %}
+    </body>
+</html>

@@ -1,0 +1,34 @@
+{
+    "name": "cunningsoft/message-bundle",
+    "type": "symfony-bundle",
+    "description": "A user-to-user message bundle for Symfony2",
+    "keywords": ["message", "communication"],
+    "homepage": "https://github.com/dmecke/MessageBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Daniel Mecke",
+            "homepage": "https://github.com/dmecke"
+        },
+        {
+            "name": "Contributors",
+            "homepage": "https://github.com/dmecke/MessageBundle/contributors"
+        }
+    ],
+    "require": {
+        "symfony/symfony": "2.2.*",
+        "doctrine/orm": ">=2.2.0",
+        "knplabs/knp-time-bundle": "1.1.*"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    },
+    "autoload": {
+        "psr-0": {
+            "Cunningsoft\\MessageBundle": ""
+        }
+    },
+    "target-dir": "Cunningsoft/MessageBundle"
+}

@@ -1,0 +1,25 @@
+{% extends 'CunningsoftMessageBundle::layout.html.twig' %}
+
+{% block cunningsoft_message_content %}
+<a href="{{ path('cunningsoft_message_send') }}">{{ 'message.list.send'|trans({}, 'CunningsoftMessageBundle') }}</a>
+<table>
+    <thead>
+        <tr>
+            <th>{{ 'message.general.sender'|trans({}, 'CunningsoftMessageBundle') }}</th>
+            <th>{{ 'message.general.subject'|trans({}, 'CunningsoftMessageBundle') }}</th>
+            <th>{{ 'message.general.date'|trans({}, 'CunningsoftMessageBundle') }}</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+{% for message in messages %}
+        <tr>
+            <td class="{% if not message.isRead %}cunningsoft_message_unread{% endif %}">{{ message.sender.username }}</td>
+            <td class="{% if not message.isRead %}cunningsoft_message_unread{% endif %}"><a href="{{ path('cunningsoft_message_show', { 'id': message.id } ) }}">{{ message.subject }}</a></td>
+            <td class="{% if not message.isRead %}cunningsoft_message_unread{% endif %}" title="{{ message.insertDate.format('d.m.Y H:i:s') }}">{{ message.insertDate|ago }}</td>
+            <td>{% if message.isRead %}<a href="{{ path('cunningsoft_message_markUnread', { 'id': message.id } ) }}">{{ 'message.list.markUnread'|trans({}, 'CunningsoftMessageBundle') }}</a>{% else %}<a href="{{ path('cunningsoft_message_markRead', { 'id': message.id } ) }}">{{ 'message.list.markRead'|trans({}, 'CunningsoftMessageBundle') }}</a>{% endif %}</td>
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+{% endblock %}

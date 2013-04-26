@@ -1,0 +1,17 @@
+message:
+    general:
+        backToOverview: Back to overview
+        sender: Sender
+        subject: Subject
+        date: Date
+        receiver: Receiver
+        content: Content
+    list:
+        send: Send a message
+        markRead: mark read
+        markUnread: mark unread
+    send:
+        send: send
+    show:
+    flash:
+        sent: The message has been sent successfully

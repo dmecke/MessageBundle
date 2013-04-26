@@ -1,0 +1,24 @@
+{% extends 'CunningsoftMessageBundle::layout.html.twig' %}
+
+{% block cunningsoft_message_content %}
+<a href="{{ path('cunningsoft_message_list') }}">{{ 'message.general.backToOverview'|trans({}, 'CunningsoftMessageBundle') }}</a>
+<form method="post" action="{{ path('cunningsoft_message_send') }}">
+    <div>
+        <label for="cunningsoft_message_receiver">{{ 'message.general.receiver'|trans({}, 'CunningsoftMessageBundle') }}</label>
+        <select id="cunningsoft_message_receiver" name="receiver">
+{% for receiver in users %}
+            <option value="{{ receiver.id }}">{{ receiver.username }}</option>
+{% endfor %}
+        </select>
+    </div>
+    <div>
+        <label for="cunningsoft_message_subject">{{ 'message.general.subject'|trans({}, 'CunningsoftMessageBundle') }}</label>
+        <input type="text" id="cunningsoft_message_subject" name="subject" />
+    </div>
+    <div>
+        <label for="cunningsoft_message_content">{{ 'message.general.content'|trans({}, 'CunningsoftMessageBundle') }}</label>
+        <textarea id="cunningsoft_message_content" name="content"></textarea>
+    </div>
+    <input type="submit" value="{{ 'message.send.send'|trans({}, 'CunningsoftMessageBundle') }}" />
+</form>
+{% endblock %}
